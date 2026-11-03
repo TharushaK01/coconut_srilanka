@@ -61,12 +61,12 @@ export default function CoconutLandingPage() {
       alt: "Desiccated Coconut",
       grades: [
         "Fine",
-        "Medium",
-        "Chips",
-        "Thread (Long/Short)",
         "Flakes",
+        "Medium",
         "Shredded (Long/Short)",
+        "Chips",
         "Chiplet",
+        "Thread (Long/Short)",
       ],
     },
   ];
@@ -289,7 +289,7 @@ export default function CoconutLandingPage() {
           <div className="max-w-2xl space-y-6">
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-tight drop-shadow-md">
               EDIBLE <br />
-              <span className="text-blue-100">MASTERPIECES.</span>
+              <span>MASTERPIECES.</span>
             </h1>
             <div className="pt-2">
               <a
@@ -331,10 +331,6 @@ export default function CoconutLandingPage() {
             <div className="relative flex flex-col md:flex-row items-center justify-between gap-12">
               {/* Left Side: Text Content & Grades */}
               <div className="w-full md:w-1/2 space-y-6 transition-all duration-500">
-                <span className="text-xs font-bold tracking-widest text-blue-900 uppercase bg-blue-50 px-3 py-1 rounded-md">
-                  Featured Product {activeSlide + 1} / {slideData.length}
-                </span>
-
                 <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight transition-all duration-300">
                   {currentSlide.title}
                 </h2>
@@ -347,7 +343,6 @@ export default function CoconutLandingPage() {
                     <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-slate-600">
                       {currentSlide.grades.map((grade, idx) => (
                         <div key={idx} className="flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-900" />
                           {grade}
                         </div>
                       ))}
@@ -360,9 +355,8 @@ export default function CoconutLandingPage() {
                 </p>
 
                 <div>
-                  <button className="px-7 py-3 bg-[#1b4382] hover:bg-blue-900 text-white font-medium text-sm rounded-md shadow-md transition-all duration-200 inline-flex items-center gap-2 group">
+                  <button className="px-7 py-3 bg-[#1b4382] hover:bg-blue-900 text-white font-medium text-sm rounded-full shadow-md transition-all duration-200 inline-flex items-center gap-2 group">
                     {currentSlide.buttonText}
-                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
               </div>
