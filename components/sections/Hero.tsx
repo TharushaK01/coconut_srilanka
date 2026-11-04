@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import { Mail, Phone } from "lucide-react";
 import {
   ChevronRight,
   Play,
@@ -27,7 +28,7 @@ export default function CoconutLandingPage() {
       description:
         "Savor the irresistible crunch and natural goodness of our coconut chips, delivering a delicious snacking experience with every bite.",
       buttonText: "View Our Coconut Chips",
-      image: "/images/product-chips.png",
+      image: "/product-chips.svg",
       alt: "Natural Coconut Chips",
       grades: null,
     },
@@ -37,7 +38,7 @@ export default function CoconutLandingPage() {
       description:
         "Indulge in the irresistible crunch and rich flavors of our toasted coconut chips, elevating snacking to a whole new level of deliciousness.",
       buttonText: "View Our Toasted Chips",
-      image: "/images/product-toasted.png",
+      image: "/product-toasted.svg",
       alt: "Toasted Coconut Chips",
       grades: null,
     },
@@ -47,7 +48,7 @@ export default function CoconutLandingPage() {
       description:
         "Elevate your recipes with our versatile coconut powder [Fine grade], a burst of tropical goodness in every dish.",
       buttonText: "View Our Coconut Powder",
-      image: "/images/product-powder.png",
+      image: "/product-powder.svg",
       alt: "Coconut Powder",
       grades: null,
     },
@@ -57,7 +58,7 @@ export default function CoconutLandingPage() {
       description:
         "Enhance your recipes with our premium desiccated coconut, bringing a taste of the tropics to every bite.",
       buttonText: "View Our Desiccated Coconut",
-      image: "/images/product-desiccated.png",
+      image: "/product-desiccated.svg",
       alt: "Desiccated Coconut",
       grades: [
         "Fine",
@@ -96,120 +97,144 @@ export default function CoconutLandingPage() {
 
   const currentSlide = slideData[activeSlide];
   // Certificates Data
-  const certificateCategories = [
+  interface CertificateItem {
+    name: string;
+    code: string;
+    image: string;
+    desc: string;
+    pdf?: string;
+    url?: string;
+  }
+
+  interface CertificateCategory {
+    category: string;
+    items: CertificateItem[];
+  }
+  const certificateCategories: CertificateCategory[] = [
     {
-      category: "CERTIFICATIONS",
+      category: "Certified by",
       items: [
         {
           name: "BRCGS Food Safety",
           code: "BRCGS",
-          image: "/images/cert-brcgs.png",
-          desc: "Global Standard for Food Safety Certification",
+          image: "/images/cert-brcgs.svg",
+          desc: "Click here to see the certificate",
+          pdf: "/pdfs/cert-brcgs.pdf",
         },
         {
           name: "EU Organic Certification",
           code: "EU ORGANIC",
-          image: "/images/cert-eu-organic.png",
-          desc: "Certified European Union Organic Production",
+          image: "/images/cert-eu-organic.svg",
+          desc: "Click here to see the certificate",
+          pdf: "/pdfs/cert-eu-organic.pdf",
         },
         {
           name: "USDA Organic",
           code: "USDA",
-          image: "/images/cert-usda.png",
-          desc: "United States Department of Agriculture Organic Standard",
+          image: "/images/cert-usda.svg",
+          desc: "Click here to see the certificate",
+          pdf: "/pdfs/cert-usda.pdf",
         },
         {
           name: "Fairtrade Certified",
           code: "FAIRTRADE",
-          image: "/images/cert-fairtrade.png",
-          desc: "Ethical Trading and Fair Producer Compensation",
-        },
-        {
-          name: "FDA Registered",
-          code: "FDA",
-          image: "/images/cert-fda.png",
-          desc: "U.S. Food and Drug Administration Facility Registration",
+          image: "/images/cert-fairtrade.svg",
+          desc: "Click here to see the certificate",
+          pdf: "/pdfs/cert-fairtrade.pdf",
         },
         {
           name: "Kosher Certified",
           code: "KOSHER",
-          image: "/images/cert-kosher.png",
-          desc: "Strict Compliance with Jewish Dietary Regulations",
+          image: "/images/cert-kosher.svg",
+          desc: "Click here to see the certificate",
+          pdf: "/pdfs/cert-kosher.pdf",
         },
         {
           name: "Halal Certified",
           code: "HALAL",
-          image: "/images/cert-halal.png",
-          desc: "Certified Compliant with Islamic Dietary Guidelines",
+          image: "/images/cert-halal.svg",
+          desc: "Click here to see the certificate",
+          pdf: "/pdfs/cert-halal.pdf",
         },
         {
           name: "Sedex SMETA",
           code: "SEDEX",
-          image: "/images/cert-sedex.png",
-          desc: "Audited for Ethical Trade and Responsible Supply Chain",
+          image: "/images/cert-sedex.svg",
+          desc: "Click here to see the certificate",
+          pdf: "/pdfs/cert-sedex.pdf",
         },
         {
           name: "Control Union",
           code: "CONTROL UNION",
-          image: "/images/cert-controlunion.png",
-          desc: "Global Organic & Sustainable Farming Inspection",
+          image: "/images/cert-controlunion.svg",
+          desc: "Click here to see the certificate",
+          url: "https://www.sedex.com/",
+        },
+        {
+          name: "iso14001 Certified",
+          code: "iso14001",
+          image: "/images/iso14001.svg",
+          desc: "Click here to see the certificate",
+          pdf: "/pdfs/iso14001.pdf",
+        },
+        {
+          name: "edb",
+          code: "edb",
+          image: "/images/edb.svg",
+          desc: "Click here to see the certificate",
+          url: "https://www.srilankabusiness.com/exporters-directory/company-profiles/mathammana-dc-mills-pvt-ltd/",
+        },
+        {
+          name: "iso14064",
+          code: "iso14064",
+          image: "/images/iso14064.svg",
+          desc: "Click here to see the certificate",
+          pdf: "/pdfs/iso14064.pdf",
         },
       ],
     },
     {
-      category: "MEMBERSHIPS",
+      category: "VALIDATED BY",
       items: [
         {
-          name: "EDB Sri Lanka",
-          code: "EDB",
-          image: "/images/member-edb.png",
-          desc: "Sri Lanka Export Development Board Member",
+          name: "controlunion",
+          code: "controlunion",
+          image: "/images/controlunion.svg",
+          desc: "Click here to see the certificate",
+          pdf: "/pdfs/controlunion.pdf",
         },
         {
-          name: "ISO 9001:2015",
-          code: "ISO 9001",
-          image: "/images/member-iso.png",
-          desc: "Certified Quality Management System",
+          name: "sgs",
+          code: "sgs",
+          image: "/images/sgs.svg",
+          desc: "Click here to see the certificate",
+          url: "https://www.sgs.com/en",
+        },
+        {
+          name: "bureau",
+          code: "bureau",
+          image: "/images/bureau.svg",
+          desc: "Click here to see the certificate",
+          url: "https://group.bureauveritas.com/",
         },
       ],
     },
     {
-      category: "AUDITED BY",
+      category: "APPROVED BY",
       items: [
         {
           name: "Control Union Certifications",
           code: "CU CERT",
-          image: "/images/audit-cu.png",
+          image: "/images/cda.svg",
           desc: "Independent Third Party Quality Audits",
+          pdf: "/pdfs/controlunion.pdf",
         },
         {
           name: "SGS Testing & Inspection",
           code: "SGS",
-          image: "/images/audit-sgs.png",
+          image: "/images/gm.svg",
           desc: "Worldwide Leading Inspection & Certification Body",
-        },
-        {
-          name: "Bureau Veritas",
-          code: "BUREAU VERITAS",
-          image: "/images/audit-bv.png",
-          desc: "Global Leader in Testing, Inspection & Certification",
-        },
-      ],
-    },
-    {
-      category: "AFFILIATED WITH",
-      items: [
-        {
-          name: "Coconut Development Authority",
-          code: "CDA",
-          image: "/images/aff-cda.png",
-          desc: "Apex Government Authority for Coconut Industry",
-        },
-        {
-          name: "National Chamber of Exporters",
-          code: "NCE",
-          image: "/images/aff-nce.png",
-          desc: "Promoting Sri Lankan Exports Globally",
+          url: "http://goodmarket.global/",
         },
       ],
     },
@@ -217,58 +242,91 @@ export default function CoconutLandingPage() {
 
   // Partners List
   const partners = [
-    { name: "DNV GL", logo: "/images/partner-dnv.png" },
-    { name: "EKP Global", logo: "/images/partner-ekp.png" },
-    { name: "Eurofins", logo: "/images/partner-eurofins.png" },
-    { name: "Intertek", logo: "/images/partner-intertek.png" },
-    { name: "TÜV SÜD", logo: "/images/partner-tuv.png" },
-    { name: "Ceylon Chamber", logo: "/images/partner-chamber.png" },
+    { name: "DNV GL", logo: "/logos/con_coco.png" },
+    { name: "EKP Global", logo: "/logos/CBL.png" },
+    { name: "Eurofins", logo: "/logos/rancrisp.png" },
+    { name: "Intertek", logo: "/logos/exp.png" },
+    { name: "TÜV SÜD", logo: "/logos/aa.png" },
+    { name: "Ceylon Chamber", logo: "/logos/senikma.png" },
+    { name: "DNV GL", logo: "/logos/als.png" },
+    { name: "EKP Global", logo: "/logos/mufadda.png" },
+    { name: "Eurofins", logo: "/logos/srs-fruit-n-spices-logo.png" },
+    { name: "Intertek", logo: "/logos/otc.png" },
+    { name: "TÜV SÜD", logo: "/logos/cylon-export.png" },
+    { name: "Ceylon Chamber", logo: "/logos/adam-group.png" },
+    {
+      name: "Ceylon Chamber",
+      logo: "/logos/jafferjee-brothers-colombo-sri-lanka.png",
+    },
   ];
 
   // Quality Grid Images
   const qualityImages = [
-    { src: "/images/quality-1.jpg", title: "Harvesting Fresh Coconuts" },
-    { src: "/images/quality-2.jpg", title: "Raw Material Inspection" },
-    { src: "/images/quality-3.jpg", title: "Hygienic Shelling & Peeling" },
-    { src: "/images/quality-4.jpg", title: "Pure Water Washing" },
-    { src: "/images/quality-5.jpg", title: "Controlled Dehydration Process" },
-    { src: "/images/quality-6.jpg", title: "Automated Sorting & Gradients" },
-    { src: "/images/quality-7.jpg", title: "Strict Quality Control Testing" },
-    { src: "/images/quality-8.jpg", title: "Eco-Friendly Vacuum Packaging" },
-    { src: "/images/quality-9.jpg", title: "Global Logistics & Shipping" },
+    {
+      src: "/gallery/1P9A8177.svg",
+      alt: "Coconuts stored at the processing facility",
+    },
+    {
+      src: "/gallery/1P9A8293.svg",
+      alt: "Worker processing coconuts",
+    },
+    {
+      src: "/gallery/1P9A8392.svg",
+      alt: "Factory team sorting coconut products",
+    },
+    {
+      src: "/gallery/1P9A8732.svg",
+      alt: "Coconut flakes moving along the production line",
+    },
+    {
+      src: "/gallery/1P9A8708.svg",
+      alt: "Factory team preparing coconut products",
+    },
+    {
+      src: "/gallery/1P9A8752.svg",
+      alt: "Forklift loading coconut products for delivery",
+    },
+    {
+      src: "/gallery/1P9A8646.svg",
+      alt: "Desiccated coconut processing line",
+    },
+    {
+      src: "/gallery/1P9A8644.svg",
+      alt: "Packaged coconut products in the warehouse",
+    },
   ];
 
   // Coconut Benefits
   const benefits = [
     {
-      icon: <Activity className="w-8 h-8 text-slate-800" />,
+      url: "/icon/1.svg",
       title: "Rich in Healthy Fats",
-      description: "Contains medium-chain triglycerides (MCTs)",
+      description: "Rich in healthy fats, vitamins, and minerals.",
     },
     {
-      icon: <Zap className="w-8 h-8 text-slate-800" />,
+      url: "/icon/2.svg",
       title: "Instant Energy Boost",
-      description: "Quickly metabolized into immediate fuel",
+      description: "Free from artificial additives and preservatives.",
     },
     {
-      icon: <Sparkles className="w-8 h-8 text-slate-800" />,
+      url: "/icon/3.svg",
       title: "High in Essential Fiber",
-      description: "Supports healthy digestion and gut wellness",
+      description: "Gluten-free and suitable for various dietary preferences.",
     },
     {
-      icon: <Heart className="w-8 h-8 text-slate-800" />,
+      url: "/icon/4.svg",
       title: "Promotes Heart Health",
-      description: "Supports balanced cholesterol levels",
+      description: "Promotes overall health and well-being.",
     },
     {
-      icon: <ShieldCheck className="w-8 h-8 text-slate-800" />,
+      url: "/icon/5.svg",
       title: "Strengthens Immunity",
-      description: "Packed with naturally antibacterial lauric acid",
+      description: "Adds a delicious coconut flavor and texture to dishes.",
     },
     {
-      icon: <Droplet className="w-8 h-8 text-slate-800" />,
+      url: "/icon/6.svg",
       title: "Deep Skin Hydration",
-      description: "Nourishes skin & maintains natural moisture balance",
+      description: "Supports sustainable agriculture and local communities.",
     },
   ];
 
@@ -320,7 +378,7 @@ export default function CoconutLandingPage() {
         </div>
       </section>
 
-      <div
+      <section
         ref={containerRef}
         id="products"
         className="relative h-[400vh] bg-white"
@@ -330,8 +388,8 @@ export default function CoconutLandingPage() {
           <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 w-full">
             <div className="relative flex flex-col md:flex-row items-center justify-between gap-12">
               {/* Left Side: Text Content & Grades */}
-              <div className="w-full md:w-1/2 space-y-6 transition-all duration-500">
-                <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight transition-all duration-300">
+              <div className="w-full md:w-3/4 space-y-6 transition-all duration-500">
+                <h2 className="text-3xl sm:text-[70px] font-extrabold text-[#474141] tracking-tight transition-all duration-300">
                   {currentSlide.title}
                 </h2>
 
@@ -364,7 +422,7 @@ export default function CoconutLandingPage() {
               {/* Right Side: Circular Image & Dots Navigation */}
               <div className="w-full md:w-1/2 flex items-center justify-center relative">
                 {/* Circular Product Image Container */}
-                <div className="relative w-72 h-72 sm:w-88 sm:h-88 md:w-96 md:h-96 rounded-full bg-gradient-to-tr from-blue-50 to-amber-50 shadow-xl flex items-center justify-center p-4 border border-blue-100 group overflow-hidden">
+                <div className="relative w-72 h-72 sm:w-88 sm:h-88 md:w-96 md:h-96 flex items-center justify-center p-4 group overflow-hidden">
                   <img
                     src={currentSlide.image}
                     alt={currentSlide.alt}
@@ -390,7 +448,7 @@ export default function CoconutLandingPage() {
                 </div>
 
                 {/* Vertical 4 Dots Navigation (Hover & Click Trigger) */}
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-20 bg-white/90 backdrop-blur-md p-2 rounded-full shadow-lg border border-slate-200">
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-20 ">
                   {slideData.map((slide, index) => (
                     <button
                       key={slide.id}
@@ -399,8 +457,8 @@ export default function CoconutLandingPage() {
                       aria-label={`Go to slide ${index + 1}`}
                       className={`w-3.5 h-3.5 rounded-full transition-all duration-300 ${
                         activeSlide === index
-                          ? "bg-[#1b4382] scale-125 ring-4 ring-blue-200"
-                          : "bg-slate-300 hover:bg-slate-400"
+                          ? "bg-[#ffbf00] "
+                          : "bg-[#1b4382]  hover:bg-slate-400"
                       }`}
                     />
                   ))}
@@ -409,44 +467,48 @@ export default function CoconutLandingPage() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* 4. CERTIFICATES SECTION */}
       <section className="py-20 bg-[#1b4382] text-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-wider uppercase text-white">
+          <div className="text-center max-w-4xl mx-auto space-y-4 mb-16">
+            <h2 className="text-3xl sm:text-[56px] font-extrabold tracking-wider uppercase text-white">
               CERTIFIED GOODNESS
             </h2>
-            <div className="w-16 h-1 bg-amber-400 mx-auto rounded-full" />
-            <p className="text-blue-100 text-sm sm:text-base font-light leading-relaxed">
-              Our commitment to uncompromised quality, safety, and sustainable
-              ethical manufacturing is validated by international standards
-              across global food and safety organizations.
+            <p className="text-blue-100 text-sm sm:text-[18px] font-light leading-relaxed">
+              We specialize in creating a range of coconut-based products,
+              including desiccated coconut powder, chips, and threads. Our focus
+              is on toasted and flavored coconut delights. We also offer coconut
+              water, charcoal, and coconut shells as bi-products for wholesale
             </p>
+            <div className="w-16 h-1 bg-amber-400 mx-auto rounded-full" />
           </div>
 
           <div className="space-y-12">
             {certificateCategories.map((sec, secIdx) => (
               <div key={secIdx} className="space-y-6">
-                <div className="flex items-center gap-3 border-b border-blue-400/30 pb-2">
-                  <ShieldCheck className="w-5 h-5 text-amber-400" />
-                  <h3 className="text-xs sm:text-sm font-bold tracking-widest text-blue-200 uppercase">
+                <div className="items-center gap-3 pb-4">
+                  <h3 className="text-xs sm:text-[20px] font-bold tracking-widest text-[#ffffff] uppercase text-center">
                     {sec.category}
                   </h3>
                 </div>
-
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
+                <div className="flex flex-wrap justify-center gap-4 sm:gap-6 items-center">
                   {sec.items.map((item, idx) => (
                     <div
                       key={idx}
-                      className="group relative bg-white rounded-xl p-4 sm:p-6 flex flex-col items-center justify-center text-center shadow-md border border-white/20 transition-all duration-300 hover:shadow-2xl overflow-hidden cursor-pointer h-36 sm:h-40"
+                      onClick={() => {
+                        const link = item.pdf ?? item.url;
+                        if (link)
+                          window.open(link, "_blank", "noopener,noreferrer");
+                      }}
+                      className={`group relative bg-white rounded-xl flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-2xl overflow-hidden cursor-pointer h-36 sm:h-50 w-[calc(50%-0.5rem)] sm:w-[calc(25%-1rem)] lg:w-[calc(33.33%-1rem) max-w-xs]`}
                     >
                       <div className="flex flex-col items-center justify-center transition-transform duration-300 group-hover:scale-90">
                         <img
                           src={item.image}
                           alt={item.name}
-                          className="max-h-16 max-w-full object-contain mb-2 filter drop-shadow-sm"
+                          className=" w-full h-full object-contain mb-2 filter drop-shadow-sm"
                           onError={(e) => {
                             e.currentTarget.style.display = "none";
                             const nextEl = e.currentTarget
@@ -463,9 +525,7 @@ export default function CoconutLandingPage() {
                       </div>
 
                       <div className="absolute inset-0 bg-blue-900/95 backdrop-blur-sm p-4 flex flex-col items-center justify-center text-center translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out">
-                        <p className="text-white font-bold text-xs sm:text-sm leading-tight mb-1">
-                          {item.name}
-                        </p>
+                        <p className="text-white font-bold text-xs sm:text-sm leading-tight mb-1"></p>
                         <p className="text-blue-200 text-[11px] leading-tight font-light">
                           {item.desc}
                         </p>
@@ -482,28 +542,30 @@ export default function CoconutLandingPage() {
       {/* 5. OUR PARTNERS SECTION */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 text-center space-y-12">
-          <div className="max-w-2xl mx-auto space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 uppercase tracking-tight">
+          <div className="max-w-5xl mx-auto space-y-3">
+            <h2 className="text-3xl sm:text-[56px] font-extrabold text-[#474141] uppercase tracking-tight">
               OUR PARTNERS
             </h2>
-            <div className="w-12 h-1 bg-blue-900 mx-auto rounded-full" />
+            <div className="w-12 h-1 bg-amber-400 mx-auto rounded-full" />
             <p className="text-slate-600 text-sm sm:text-base font-light">
-              Collaborating with prestigious global distributors, supply chains,
-              and testing laboratories to bring authentic Ceylon coconut
-              products everywhere.
+              For 50 years, we have been creating long standing relationships
+              with businesses all around the world. Each product that leaves our
+              factory is uniquely tailored to our consumers and distributors,
+              which keeps them coming back for more. Get in touch and tell us
+              exactly how you like your coconut treats and become our next
+              partner!
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 items-center justify-center">
+          <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-">
             {partners.map((partner, index) => (
               <div
                 key={index}
-                className="p-4 rounded-lg bg-slate-50 hover:bg-blue-50/50 border border-slate-100 transition-all duration-300 flex items-center justify-center h-24 grayscale hover:grayscale-0 hover:scale-105"
+                className="rounded-lg transition-all duration-300 flex items-center justify-center w-32 h-24 grayscale hover:scale-105"
               >
                 <img
                   src={partner.logo}
-                  alt={partner.name}
-                  className="max-h-12 max-w-full object-contain"
+                  className="max-h-24 max-w-full object-contain"
                   onError={(e) => {
                     e.currentTarget.style.display = "none";
                     const nextEl = e.currentTarget
@@ -519,8 +581,16 @@ export default function CoconutLandingPage() {
           </div>
 
           <div className="pt-4">
-            <button className="px-8 py-3 bg-[#1b4382] hover:bg-blue-900 text-white font-medium text-sm rounded-full shadow-md transition-all duration-200">
-              Become a Partner
+            <button
+              onClick={() =>
+                window.open(
+                  "/pdfs/Mathammana-DC-Factory-Brocher-1.0.pdf",
+                  "_blank",
+                )
+              }
+              className="px-8 py-3 bg-[#1b4382] hover:bg-blue-900 text-white font-medium text-sm rounded-full shadow-md transition-all duration-200 cursor-pointer"
+            >
+              Download Our Brochure
             </button>
           </div>
         </div>
@@ -529,28 +599,35 @@ export default function CoconutLandingPage() {
       {/* 6. QUALITY AND SUSTAINABILITY SECTION */}
       <section className="py-20 bg-[#f9f6ef]">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 uppercase tracking-tight leading-snug">
+          <div className="text-center max-w-7xl mx-auto space-y-4">
+            <h2 className="text-3xl sm:text-[56px] font-extrabold text-[#474141] uppercase tracking-tight leading-snug">
               QUALITY AND SUSTAINABILITY IN EVERY COCONUT
             </h2>
             <p className="text-slate-600 text-sm sm:text-base font-light leading-relaxed">
-              From organic certified plantations to modern automated processing
-              facilities, our stringent quality assurance processes preserve
-              natural goodness while protecting our tropical ecosystem and local
-              farming communities.
+              Mathammana D/C Factory is committed to ethical sourcing and
+              sustainability. Our coconut products, from powder to chips, are a
+              testament to this commitment. We partner with local farmers and
+              cooperatives in Sri Lanka to ensure that our products are not only
+              of the highest quality but also support the environment and local
+              communities. With Mathammana, you&apos;re not just getting coconut
+              products, you&apos;re investing in a sustainable future for Sri
+              Lanka and beyond.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
             {qualityImages.map((img, index) => (
               <div
-                key={index}
-                className="relative group rounded-xl overflow-hidden aspect-square bg-slate-200 shadow-sm border border-amber-100"
+                key={img.src}
+                className={`group relative aspect-[3/2] overflow-hidden bg-slate-200 ${
+                  index === 3 ? "md:row-span-2 md:aspect-auto" : ""
+                }`}
               >
                 <img
                   src={img.src}
-                  alt={img.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  alt={img.alt}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   onError={(e) => {
                     e.currentTarget.style.display = "none";
                     const nextEl = e.currentTarget
@@ -559,17 +636,8 @@ export default function CoconutLandingPage() {
                   }}
                 />
                 <div className="hidden absolute inset-0 bg-slate-300 flex-col items-center justify-center p-4 text-center">
-                  <span className="text-xs font-bold text-slate-700">
-                    {img.title}
-                  </span>
                   <span className="text-[10px] text-slate-500 mt-1">
                     {img.src}
-                  </span>
-                </div>
-
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="text-white font-medium text-sm drop-shadow">
-                    {img.title}
                   </span>
                 </div>
               </div>
@@ -580,7 +648,7 @@ export default function CoconutLandingPage() {
             <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900">
               <iframe
                 className="w-full h-full object-cover"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                src="https://www.youtube.com/embed/uD4Ow0LvzUo?si=w6NTfuwEznOLQbCP"
                 title="Sustainable Coconut Farming Sri Lanka"
                 allowFullScreen
               />
@@ -588,7 +656,7 @@ export default function CoconutLandingPage() {
             <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg border border-slate-200 bg-slate-900">
               <iframe
                 className="w-full h-full object-cover"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                src="https://www.youtube.com/embed/kk1t1zqXSK4?si=9KM_gI6LxqGSTRk9"
                 title="Advanced Manufacturing Process"
                 allowFullScreen
               />
@@ -601,10 +669,10 @@ export default function CoconutLandingPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 text-center space-y-16">
           <div className="space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 uppercase tracking-tight">
+            <h2 className="text-3xl sm:text-[56px] font-extrabold text-[#474141] uppercase tracking-tight">
               UNLOCKING THE BENEFITS OF COCONUT
             </h2>
-            <div className="w-16 h-1 bg-[#1b4382] mx-auto rounded-full" />
+            <div className="w-16 h-1 bg-[#F79239] mx-auto rounded-full" />
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
@@ -613,16 +681,15 @@ export default function CoconutLandingPage() {
                 key={index}
                 className="flex flex-col items-center text-center group"
               >
-                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-slate-800 flex items-center justify-center p-4 mb-4 transition-all duration-300 group-hover:bg-[#1b4382] group-hover:border-[#1b4382] group-hover:scale-110 shadow-sm">
-                  {React.cloneElement(benefit.icon, {
-                    className:
-                      "w-8 h-8 text-slate-800 group-hover:text-white transition-colors",
-                  })}
+                <div className="w-30 h-30 sm:w-24 sm:h-24 rounded-full flex items-center justify-center p-4 mb-4 transition-all duration-300 group-hover:scale-110 ">
+                  <img
+                    src={benefit.url}
+                    alt=""
+                    aria-hidden="true"
+                    className="w-full h-full object-contain"
+                  />
                 </div>
-                <h3 className="font-extrabold text-slate-900 text-sm sm:text-base mb-1">
-                  {benefit.title}
-                </h3>
-                <p className="text-xs text-slate-500 leading-tight font-light max-w-[150px]">
+                <p className="text-[16px] text-slate-500 leading-tight font-light max-w-[300px]">
                   {benefit.description}
                 </p>
               </div>
@@ -633,66 +700,56 @@ export default function CoconutLandingPage() {
 
       {/* 8. ASK YOUR LOCAL EXPORTER BANNER */}
       <section className="w-full bg-[#1b4382] py-10 px-6 text-center text-white">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-wider drop-shadow-sm">
-            ASK YOUR LOCAL EXPORTER FOR MTI PRODUCTS
+        <div className="max-w-9xl mx-auto">
+          <h2 className="text-2xl sm:text-[53px] md:text-4xl font-extrabold uppercase tracking-wider drop-shadow-sm">
+            Ask your local exporter for M119 products
           </h2>
         </div>
       </section>
 
       {/* 9. HOW CAN WE HELP */}
-      <section className="py-20 bg-[#f9f6ef] relative overflow-hidden">
+      <section className=" bg-[#f9f6ef] relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 pointer-events-none flex items-center justify-between px-10">
           <div className="w-96 h-96 rounded-full bg-slate-900 blur-3xl" />
           <div className="w-96 h-96 rounded-full bg-amber-900 blur-3xl" />
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-8">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 uppercase tracking-tight">
+        <div
+          className="relative py-20 bg-cover bg-center bg-no-repeat text-white"
+          style={{ backgroundImage: `url('/how-can-we-help.PNG')` }}
+        >
+          <h2 className="py-6 text-3xl sm:text-[56px] font-extrabold text-[#474141] uppercase tracking-tight text-center">
             HOW CAN WE HELP
           </h2>
+          <div className="w-16 h-1 mb-6 bg-[#F79239] mx-auto rounded-full" />
 
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto font-light">
-            Whether you are looking for bulk raw coconut materials, customized
-            OEM private labeling solutions, or retail-ready organic coconut
-            delicacies, our export experts are ready to assist your business
-            across every stage of procurement.
+          <p className="text-slate-600 text-sm sm:text-[18px] leading-relaxed max-w-3xl mx-auto font-light">
+            We're here to help! Whether you have a question about our products,
+            want to inquire about wholesale opportunities, or just want to say
+            hello, we'd love to hear from you. You can reach us by filling out
+            the form below, sending us an email at, or giving us a call at.
+            We'll get back to you as soon as possible.
           </p>
-
-          <div className="pt-6 flex flex-wrap items-center justify-center gap-8 sm:gap-12">
-            <div className="flex items-center gap-3 bg-white px-5 py-3 rounded-xl shadow-sm border border-amber-100">
-              <Globe className="w-6 h-6 text-[#1b4382]" />
-              <div className="text-left">
-                <span className="block text-xs font-bold text-slate-800 uppercase">
-                  Global Export
-                </span>
-                <span className="block text-[11px] text-slate-500">
-                  Shipping to 45+ Countries
-                </span>
-              </div>
+          <div className="flex flex-row items-center justify-center gap-6 py-4 px-6 text-[#1b4382]">
+            <div className="flex items-center gap-4">
+              <Mail className="w-8 h-8 text-[#1b4382] shrink-0" />
+              <a
+                href="mailto:info@coconutsrilanka.com"
+                className="text-sm sm:text-base font-semibold tracking-wide hover:underline"
+              >
+                info@coconutsrilanka.com
+              </a>
             </div>
 
-            <div className="flex items-center gap-3 bg-white px-5 py-3 rounded-xl shadow-sm border border-amber-100">
-              <CheckCircle className="w-6 h-6 text-emerald-600" />
-              <div className="text-left">
-                <span className="block text-xs font-bold text-slate-800 uppercase">
-                  OEM & Private Label
-                </span>
-                <span className="block text-[11px] text-slate-500">
-                  Customized Packaging
-                </span>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 bg-white px-5 py-3 rounded-xl shadow-sm border border-amber-100">
-              <Info className="w-6 h-6 text-[#1b4382]" />
-              <div className="text-left">
-                <span className="block text-xs font-bold text-slate-800 uppercase">
-                  Direct Inquiry
-                </span>
-                <span className="block text-[11px] text-slate-500">
-                  24/7 B2B Support
-                </span>
+            <div className="flex items-center gap-4">
+              <Phone className="w-8 h-8 text-[#1b4382] shrink-0" />
+              <div className="flex flex-col text-sm sm:text-base font-semibold tracking-wide">
+                <a href="tel:+94112296547" className="hover:underline">
+                  +94 112296547
+                </a>
+                <a href="tel:+94774181573" className="hover:underline">
+                  +94 774181573
+                </a>
               </div>
             </div>
           </div>
