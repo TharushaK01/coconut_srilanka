@@ -16,6 +16,7 @@ import {
   ExternalLink,
   Info,
 } from "lucide-react";
+import { url } from "inspector";
 export default function CoconutLandingPage() {
   // Slider State for Vertical Slider Section
   const [activeSlide, setActiveSlide] = useState(0);
@@ -28,6 +29,7 @@ export default function CoconutLandingPage() {
       description:
         "Savor the irresistible crunch and natural goodness of our coconut chips, delivering a delicious snacking experience with every bite.",
       buttonText: "View Our Coconut Chips",
+      url: "/products",
       image: "/product-chips.svg",
       alt: "Natural Coconut Chips",
       grades: null,
@@ -37,6 +39,7 @@ export default function CoconutLandingPage() {
       title: "TOASTED COCONUT CHIPS",
       description:
         "Indulge in the irresistible crunch and rich flavors of our toasted coconut chips, elevating snacking to a whole new level of deliciousness.",
+      url: "/products",
       buttonText: "View Our Toasted Chips",
       image: "/product-toasted.svg",
       alt: "Toasted Coconut Chips",
@@ -47,6 +50,7 @@ export default function CoconutLandingPage() {
       title: "COCONUT POWDER",
       description:
         "Elevate your recipes with our versatile coconut powder [Fine grade], a burst of tropical goodness in every dish.",
+      url: "/products",
       buttonText: "View Our Coconut Powder",
       image: "/product-powder.svg",
       alt: "Coconut Powder",
@@ -57,6 +61,7 @@ export default function CoconutLandingPage() {
       title: "DESICCATED COCONUT",
       description:
         "Enhance your recipes with our premium desiccated coconut, bringing a taste of the tropics to every bite.",
+      url: "/products",
       buttonText: "View Our Desiccated Coconut",
       image: "/product-desiccated.svg",
       alt: "Desiccated Coconut",
@@ -81,6 +86,8 @@ export default function CoconutLandingPage() {
         containerRef.current.offsetHeight - window.innerHeight;
       const scrolled = -rect.top;
 
+      if (containerHeight <= 0) return;
+
       if (scrolled >= 0 && scrolled <= containerHeight) {
         const progress = scrolled / containerHeight;
         const newSlide = Math.min(
@@ -92,6 +99,7 @@ export default function CoconutLandingPage() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, [slideData.length]);
 
@@ -351,7 +359,7 @@ export default function CoconutLandingPage() {
             </h1>
             <div className="pt-2">
               <a
-                href="#products"
+                href="/products"
                 className="inline-flex items-center justify-center px-8 py-3.5 bg-blue-900 hover:bg-blue-800 text-white font-semibold text-sm rounded-full shadow-lg hover:shadow-blue-900/40 transition-all duration-300 transform hover:-translate-y-0.5 border border-blue-700/50 group"
               >
                 View Our Products
@@ -413,9 +421,12 @@ export default function CoconutLandingPage() {
                 </p>
 
                 <div>
-                  <button className="px-7 py-3 bg-[#1b4382] hover:bg-blue-900 text-white font-medium text-sm rounded-full shadow-md transition-all duration-200 inline-flex items-center gap-2 group">
+                  <a
+                    href="/products"
+                    className="px-7 py-3 bg-[#1b4382] hover:bg-blue-900 text-white font-medium text-sm rounded-full shadow-md transition-all duration-200 inline-flex items-center gap-2 group"
+                  >
                     {currentSlide.buttonText}
-                  </button>
+                  </a>
                 </div>
               </div>
 
@@ -470,7 +481,10 @@ export default function CoconutLandingPage() {
       </section>
 
       {/* 4. CERTIFICATES SECTION */}
-      <section className="py-20 bg-[#1b4382] text-white">
+      <section
+        id="certifications"
+        className="scroll-mt-20 py-20 bg-[#1b4382] text-white"
+      >
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
           <div className="text-center max-w-4xl mx-auto space-y-4 mb-16">
             <h2 className="text-3xl sm:text-[56px] font-extrabold tracking-wider uppercase text-white">
@@ -540,7 +554,7 @@ export default function CoconutLandingPage() {
       </section>
 
       {/* 5. OUR PARTNERS SECTION */}
-      <section className="py-20 bg-white">
+      <section id="partners" className="scroll-mt-20 py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 text-center space-y-12">
           <div className="max-w-5xl mx-auto space-y-3">
             <h2 className="text-3xl sm:text-[56px] font-extrabold text-[#474141] uppercase tracking-tight">
@@ -708,7 +722,7 @@ export default function CoconutLandingPage() {
       </section>
 
       {/* 9. HOW CAN WE HELP */}
-      <section className=" bg-[#f9f6ef] relative overflow-hidden">
+      <section id="contact" className=" bg-[#f9f6ef] relative overflow-hidden">
         <div className="absolute inset-0 opacity-5 pointer-events-none flex items-center justify-between px-10">
           <div className="w-96 h-96 rounded-full bg-slate-900 blur-3xl" />
           <div className="w-96 h-96 rounded-full bg-amber-900 blur-3xl" />

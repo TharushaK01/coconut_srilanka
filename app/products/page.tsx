@@ -31,6 +31,13 @@ export default function Home() {
             sustainably-sourced products, from powders to chips and everything
             in between.
           </p>
+          <Image
+            src="/images/Coconut-sign.svg"
+            alt="Coconut sign"
+            width={48}
+            height={48}
+            className="object-center"
+          />
         </div>
       </section>
 

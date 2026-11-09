@@ -44,16 +44,19 @@ interface FooterLink {
 }
 
 const footerLinks: FooterLink[] = [
-  { label: "Our Partners", href: "#partners" },
-  { label: "Certifications", href: "#certifications" },
-  { label: "Products", href: "#products" },
-  { label: "About", href: "#products" },
+  { label: "Our Partners", href: "/#partners" },
+  { label: "Certifications", href: "/#certifications" },
+  { label: "Products", href: "/products" },
+  { label: "About", href: "/about" },
   { label: "Contact Us", href: "#contact" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1b4382] text-white pt-12 pb-8 px-6 md:px-12">
+    <footer
+      id="contact"
+      className="bg-[#1b4382] text-white pt-12 pb-8 px-6 md:px-12"
+    >
       <div className="max-w-5xl mx-auto flex flex-col items-center text-center space-y-6">
         {/* Centered Circular Logo */}
         <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white p-1 shadow-lg ring-4 ring-white/20">
@@ -90,7 +93,7 @@ export default function Footer() {
         {/* Social Icons */}
         <div className="flex items-center justify-center gap-4 pt-2">
           <a
-            href="https://facebook.com"
+            href="https://web.facebook.com/profile.php?id=61556104813306"
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 text-white flex items-center justify-center hover:text-[#000000] transition-all duration-300 "
@@ -99,7 +102,7 @@ export default function Footer() {
             <FacebookIcon className="w-5 h-5 fill-current" />
           </a>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/mathammanadc?igsh=MTJ0MTdwZ292YzNlNA=="
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 text-white flex items-center justify-center  hover:text-[#000000] transition-all duration-300 "
@@ -108,7 +111,7 @@ export default function Footer() {
             <InstagramIcon className="w-5 h-5 fill-current" />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/login/?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F100475767"
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 text-white flex items-center justify-center hover:text-[#000000] transition-all duration-300"
@@ -117,7 +120,7 @@ export default function Footer() {
             <LinkedinIcon className="w-5 h-5 fill-current" />
           </a>
           <a
-            href="https://youtube.com"
+            href="https://www.youtube.com/watch?v=fnP_To6AHMY"
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 text-white flex items-center justify-center hover:text-[#000000] transition-all duration-300"

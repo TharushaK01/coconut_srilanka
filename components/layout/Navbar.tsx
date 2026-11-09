@@ -11,8 +11,8 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: "Our Partners", href: "#partners" },
-  { label: "Certifications", href: "#certifications" },
+  { label: "Our Partners", href: "/#partners" },
+  { label: "Certifications", href: "/#certifications" },
   { label: "Products", href: "/products" },
   { label: "Contact Us", href: "#contact" },
 ];
@@ -50,7 +50,7 @@ export default function Navbar() {
 
           <div className="flex items-center gap-4">
             <Link
-              href="#about"
+              href="/about"
               className="hidden sm:inline-block bg-[#1b4382] hover:bg-[#143263] text-white font-semibold text-xs sm:text-sm py-2.5 px-6 rounded-full shadow-md hover:shadow-lg transition-all duration-200"
             >
               More About US
