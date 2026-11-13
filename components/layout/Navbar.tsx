@@ -25,7 +25,7 @@ export default function Navbar() {
       <nav className="bg-[#FAF8F5] border-b border-stone-200/60 py-3 px-4 sm:px-8 lg:px-12">
         <div className="max-w-7xl mx-auto flex items-center justify-between relative">
           <Link href="/" className="relative z-20 shrink-0 -mb-10 sm:-mb-14">
-            <div className="relative w-20 h-20 sm:w-28 sm:h-28 rounded-full bg-white p-1 shadow-md ring-2 ring-[#1b4382]/20">
+            <div className="relative w-20 h-20 sm:w-28 sm:h-28 rounded-full bg-white p-1">
               <Image
                 src="/logo.svg"
                 alt="Mathammana D/C Factory Logo"

@@ -49,7 +49,7 @@ export default function CoconutLandingPage() {
       id: 2,
       title: "COCONUT POWDER",
       description:
-        "Elevate your recipes with our versatile coconut powder [Fine grade], a burst of tropical goodness in every dish.",
+        "Elevate your recipes with our versatile coconut powder (Fine grade), a burst of tropical goodness in every dish.",
       url: "/products",
       buttonText: "View Our Coconut Powder",
       image: "/product-powder.svg",
@@ -234,14 +234,14 @@ export default function CoconutLandingPage() {
           name: "Control Union Certifications",
           code: "CU CERT",
           image: "/images/cda.svg",
-          desc: "Independent Third Party Quality Audits",
+          desc: "Click here to see the certificat",
           pdf: "/pdfs/controlunion.pdf",
         },
         {
           name: "SGS Testing & Inspection",
           code: "SGS",
           image: "/images/gm.svg",
-          desc: "Worldwide Leading Inspection & Certification Body",
+          desc: "Click here to see the certificat",
           url: "http://goodmarket.global/",
         },
       ],
@@ -403,10 +403,10 @@ export default function CoconutLandingPage() {
 
                 {currentSlide.grades && (
                   <div className="space-y-2 animate-fadeIn">
-                    <span className="block font-bold text-slate-800 text-sm uppercase tracking-wider">
+                    <span className="block font-bold text-[#474141] text-[18px] tracking-wider">
                       Grades Available
                     </span>
-                    <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-slate-600">
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-[#474141]">
                       {currentSlide.grades.map((grade, idx) => (
                         <div key={idx} className="flex items-center gap-2">
                           {grade}
@@ -416,7 +416,7 @@ export default function CoconutLandingPage() {
                   </div>
                 )}
 
-                <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-light">
+                <p className="text-[#474141] text-base sm:text-lg leading-relaxed font-regular">
                   {currentSlide.description}
                 </p>
 
@@ -490,13 +490,13 @@ export default function CoconutLandingPage() {
             <h2 className="text-3xl sm:text-[56px] font-extrabold tracking-wider uppercase text-white">
               CERTIFIED GOODNESS
             </h2>
+            <div className="w-16 h-1 bg-amber-400 mx-auto rounded-full" />
             <p className="text-blue-100 text-sm sm:text-[18px] font-light leading-relaxed">
               We specialize in creating a range of coconut-based products,
               including desiccated coconut powder, chips, and threads. Our focus
               is on toasted and flavored coconut delights. We also offer coconut
               water, charcoal, and coconut shells as bi-products for wholesale
             </p>
-            <div className="w-16 h-1 bg-amber-400 mx-auto rounded-full" />
           </div>
 
           <div className="space-y-12">
@@ -617,6 +617,7 @@ export default function CoconutLandingPage() {
             <h2 className="text-3xl sm:text-[56px] font-extrabold text-[#474141] uppercase tracking-tight leading-snug">
               QUALITY AND SUSTAINABILITY IN EVERY COCONUT
             </h2>
+            <div className="w-12 h-1 bg-amber-400 mx-auto rounded-full" />
             <p className="text-slate-600 text-sm sm:text-base font-light leading-relaxed">
               Mathammana D/C Factory is committed to ethical sourcing and
               sustainability. Our coconut products, from powder to chips, are a
@@ -695,7 +696,7 @@ export default function CoconutLandingPage() {
                 key={index}
                 className="flex flex-col items-center text-center group"
               >
-                <div className="w-30 h-30 sm:w-24 sm:h-24 rounded-full flex items-center justify-center p-4 mb-4 transition-all duration-300 group-hover:scale-110 ">
+                <div className="w-[172px] h-[172px] sm:w-[172px] sm:h-[172px] rounded-full flex items-center justify-center p-4 mb-4 transition-all duration-300 group-hover:scale-110">
                   <img
                     src={benefit.url}
                     alt=""
@@ -737,7 +738,7 @@ export default function CoconutLandingPage() {
           </h2>
           <div className="w-16 h-1 mb-6 bg-[#F79239] mx-auto rounded-full" />
 
-          <p className="text-slate-600 text-sm sm:text-[18px] leading-relaxed max-w-3xl mx-auto font-light">
+          <p className="text-slate-600 text-sm sm:text-[18px] leading-relaxed max-w-3xl mx-auto font-light align-center text-center">
             We're here to help! Whether you have a question about our products,
             want to inquire about wholesale opportunities, or just want to say
             hello, we'd love to hear from you. You can reach us by filling out

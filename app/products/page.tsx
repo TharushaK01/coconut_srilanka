@@ -66,7 +66,7 @@ export default function Home() {
         </div>
 
         {/* Feature Icon Badges */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
           {[
             {
               title: "FLAVOUR",
@@ -90,16 +90,14 @@ export default function Home() {
             },
           ].map((badge, idx) => (
             <div key={idx} className="flex flex-col items-center text-center">
-              {/* Icon Wrapper Container */}
-              <div className="w-16 h-16 flex items-center justify-center mb-3 overflow-hidden relative">
-                <Image
-                  src={badge.icon}
-                  alt={badge.title}
-                  width={48}
-                  height={48}
-                  className="object-contain w-48 h-48"
-                />
-              </div>
+              <Image
+                src={badge.icon}
+                alt={badge.title}
+                width={167}
+                height={167}
+                style={{ width: 167, height: 167 }}
+                className="mb-3 shrink-0 object-contain"
+              />
 
               <h3 className="font-bold text-sm text-[#1b4382] mb-1">
                 {badge.title}
@@ -308,7 +306,7 @@ export default function Home() {
               WANT TO DISCUSS A CUSTOMIZED ORDER?
             </p>
             <div className="w-16 h-1 mb-6 bg-[#F79239] mx-auto rounded-full" />
-            <p className="text-slate-500 text-xs sm:text-sm max-w-xl mx-auto">
+            <p className="text-slate-500 text-xs sm:text-sm max-w-xl mx-auto text-center">
               Feel free to contact us! Our team is here to assist you with any
               inquiries you may have. Reach out to us via phone, email, or
               through our online contact form. We look forward to hearing from
