@@ -122,32 +122,32 @@ export default function Home() {
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
-            { name: "CHIPS", image: "/products/CHIPS.svg" },
-            { name: "CHIPS", image: "/products/LONGTHREAD.svg" },
-            {
-              name: "TOASTED FINE",
-              image: "/products/TOASTEDFINE.svg",
-            },
-            { name: "SUGAR COATED", image: "/products/SUGARCOATED.svg" },
-            {
-              name: "SALT COATED",
-              image: "/products/SALTCOATED.svg",
-            },
-            {
-              name: "THREADS",
-              image: "/products/THREADS.svg",
-            },
+            { name: "RAW CHIPS", image: "/products/RAW CHIPS.svg" },
+            { name: "RAW FINE", image: "/products/RAW FINE.svg" },
             {
               name: "FULL TOASTED CHIPS",
-              image: "/products/THREADS.svg",
+              image: "/products/FULL TOASTED CHIPS.svg",
+            },
+            { name: "LONG THREAD", image: "/products/LONG THREAD.svg" },
+            {
+              name: "SHORT THREAD",
+              image: "/products/SHORT THREAD.svg",
             },
             {
-              name: "CHIPS WITH PARINGS",
-              image: "/products/CHIPSWITHPARINGS.svg",
+              name: "HALF TOASTED WITH PEEL (SMILES)",
+              image: "/products/HALF TOASTED WITH PEEL (SMILES).svg",
             },
             {
-              name: "CHIPLET",
-              image: "/products/CHIPLET.svg",
+              name: "FULL TOASTED SALTED",
+              image: "/products/FULL TOASTED SALTED.svg",
+            },
+            {
+              name: "FULL TOASTED FINE",
+              image: "/products/FULL TOASTED FINE.svg",
+            },
+            {
+              name: "FULL TOASTED SWEETENED",
+              image: "/products/FULL TOASTED SWEETENED.svg",
             },
           ].map((prod, idx) => (
             <div
@@ -198,14 +198,15 @@ export default function Home() {
 
         <div className="flex flex-wrap justify-center gap-6">
           {[
-            { name: "COCONUT PARINGS", img: "/products/COCONUTPARINGS.svg" },
+            { name: "PAIRINGS", img: "/products/PAIRINGS.svg" },
             {
               name: "REJECTED KERNEL WITH AND WITHOUT PAIRING",
-              img: "/products/REJECTEDKERNELWITHANDWITHOUTPAIRING.svg",
+              img: "/products/REJECTED KERNEL WITH AND WITHOUT PAIRING.svg",
             },
-            { name: "COCONUT SHELLS", img: "/products/COCONUTSHELLS.svg" },
-            { name: "COCONUT WATER", img: "/products/COCONUTWATER.svg" },
-            { name: "COCONUT COIR", img: "/products/COCONUTCOIR.svg" },
+            { name: "COCONUT SHELLS", img: "/products/COCONUT SHELLS.svg" },
+            { name: "COCONUT WATER", img: "/products/COCONUT WATER.svg" },
+            { name: "COCONUT COIR", img: "/products/COCONUT COIR.svg" },
+            { name: "COCONUT FIBER", img: "/products/COCONUT FIBER.svg" },
           ].map((item, idx) => (
             <div
               key={idx}
