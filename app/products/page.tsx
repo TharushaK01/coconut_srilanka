@@ -294,7 +294,7 @@ export default function Home() {
       </section>
 
       {/* ================= 7. INQUIRIES & CONTACT SECTION ================= */}
-      <section className=" ">
+      <section id="contact" className="scroll-mt-20">
         <div
           className="relative py-20 bg-cover bg-center bg-no-repeat text-white"
           style={{ backgroundImage: `url('/how-can-we-help.PNG')` }}

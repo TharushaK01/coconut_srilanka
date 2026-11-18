@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 interface NavItem {
@@ -19,6 +20,8 @@ const navItems: NavItem[] = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const contactHref = pathname === "/about" ? "/#contact" : "#contact";
 
   return (
     <header className="relative w-full z-50">
@@ -40,7 +43,7 @@ export default function Navbar() {
             {navItems.map((item) => (
               <Link
                 key={item.label}
-                href={item.href}
+                href={item.href === "#contact" ? contactHref : item.href}
                 className="text-[#2d3748] hover:text-[#1b4382] font-semibold text-sm lg:text-base transition-colors duration-200"
               >
                 {item.label}
@@ -100,7 +103,7 @@ export default function Navbar() {
           {navItems.map((item) => (
             <Link
               key={item.label}
-              href={item.href}
+              href={item.href === "#contact" ? contactHref : item.href}
               onClick={() => setIsOpen(false)}
               className="text-stone-800 hover:text-[#1b4382] font-semibold text-base py-1"
             >

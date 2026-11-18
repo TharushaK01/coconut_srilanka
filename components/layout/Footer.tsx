@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 type SocialIconProps = React.SVGProps<SVGSVGElement>;
 
@@ -52,9 +53,11 @@ const footerLinks: FooterLink[] = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+  const contactHref = pathname === "/about" ? "/#contact" : "#contact";
+
   return (
     <footer
-      id="contact"
       className="bg-[#1b4382] text-white pt-12 pb-8 px-6 md:px-12"
     >
       <div className="max-w-5xl mx-auto flex flex-col items-center text-center space-y-6">
@@ -135,7 +138,7 @@ export default function Footer() {
           {footerLinks.map((link) => (
             <Link
               key={link.label}
-              href={link.href}
+              href={link.href === "#contact" ? contactHref : link.href}
               className="text-white hover:text-[#C3C3C3] text-sm sm:text-base font-semibold transition-colors duration-200"
             >
               {link.label}
